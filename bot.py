@@ -2,7 +2,7 @@ import discord, requests, time, random
 from discord.ext import commands
 
 # Bot token
-TOKEN = "NzA2OTMxNTE4NTk3MTAzNjQ3.XrBoIg.5PRHcDDulAoL6M64DzXhbyP6vq4"
+TOKEN = ""
 
 
 # Command prefix that "activates" the commands
@@ -102,6 +102,7 @@ def calculate(number1, operator, number2):
     except:
         return("""Error! check the arguments and use "." instead of "," when using decimal numbers. (Example input: 11.7 * 24.75) """)
 
+
 # Fetch image function
 def fetch_image(query):
     try:
@@ -113,6 +114,7 @@ def fetch_image(query):
             return(json_results["results"][0]["urls"]["regular"])
     except:
         return("No images found :(")
+
 
 # Trivia game function
 async def trivia_function(ctx, duration, category, difficulty):
