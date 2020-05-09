@@ -1,8 +1,9 @@
 import discord, requests, time, random
 from discord.ext import commands
 
-# Your bot token here
+# Bot token
 TOKEN = "NzA2OTMxNTE4NTk3MTAzNjQ3.XrBoIg.5PRHcDDulAoL6M64DzXhbyP6vq4"
+
 
 # Command prefix that "activates" the commands
 client = commands.Bot(command_prefix = "!")
@@ -58,9 +59,9 @@ async def image(ctx, query):
 
 # Trivia command
 @client.command()
-async def trivia(ctx, duration, category=0):
+async def trivia(ctx, duration, category=0, difficulty=""):
     if duration:
-        await trivia_function(ctx, duration, category)
+        await trivia_function(ctx, duration, category, difficulty)
     else:
         await ctx.send("Missing arguments. Please add duration for the question and optionally the question category. (Example input: !trivia 10)")
 
@@ -114,10 +115,10 @@ def fetch_image(query):
         return("No images found :(")
 
 # Trivia game function
-async def trivia_function(ctx, duration, category):
+async def trivia_function(ctx, duration, category, difficulty):
     if duration.isnumeric() == True:
 
-        results = requests.get("https://opentdb.com/api.php?amount=1&category="+str(category)+"&type=multiple")
+        results = requests.get("https://opentdb.com/api.php?amount=1&category="+str(category)+"&type=multiple&difficulty="+difficulty)
         json_results = results.json()
         category = ""
         question = ""

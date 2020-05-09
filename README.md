@@ -12,18 +12,12 @@ The program also requires "requests" module for fetching data from different api
 ## Functionality
 Bot has currently the following functionalities:
 
-!ping command shows user his/her ping
-
-!clear command that clears X amount of chat messages
-
-!calc which is a calculator function
-
-!image which fetches and image for user (API: https://unsplash.com/documentation)
-
-!trivia fetches a random trivia question with answers and shows correct one after a set amount of time (API: https://opentdb.com/)
-
-!close shuts the bot down
-
+-!ping command shows user his/her ping 
+-!clear command that clears X amount of chat messages
+-!calc which is a calculator function
+-!image which fetches and image for user (API: https://unsplash.com/documentation)
+-!trivia fetches a random trivia question with answers and shows correct one after a set amount of time (API: https://opentdb.com/)
+-!close shuts the bot down
 
 For more information use !help and !info commands
 
